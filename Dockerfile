@@ -1,6 +1,6 @@
 FROM alpine/helm
 
-ENV KUBECONFIG /.kube/config
+ENV KUBECONFIG=/.kube/config
 
 RUN apk add --update --no-cache gettext
 
