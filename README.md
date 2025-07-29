@@ -56,15 +56,14 @@ steps:
 
 In order to configure the deployment, we have to specify a few environment variables:
 
-|  Variable |  Description | Mandatory | Example Value  | 
-|---|---|---|---|
-| CHART_VERSION_ARGUMENT  | Version of the Helm Chart to use.*  | `false` |  0.1.24  |
-| K8S_CERT_AUTHORITY_DATA  | `certificate-authority-data` value on the Kubernetes config file.   | `true` |  LS0tLS2CRUdPFiBDRVJUSUZJQ0FURSOtLS98URKtC...  |
-| K8S_SERVER  | `server` value on the Kubernetes config file.   | `true` |  https://29.29.29.29:16443  |
-| K8S_USER  | User name to access the cluster.  | `true` | |  foo  |
-| K8S_PASSWORD  | user password to access the cluster.   |`true`  |  1234  |
-| NAMESPACE  | K8s namespace to deploy the application in.  |  `true` |  production |
-| IMAGE_TAG  | Tag of the image to deploy. It should be the same generated on the bake step. | `true`  |   | 1.0.0.${CI_BUILD_NUMBER}  |
+| Variable                 | Description                                                                   | Mandatory | Example Value                                | 
+|--------------------------|-------------------------------------------------------------------------------|---|----------------------------------------------|
+| CHART_VERSION_ARGUMENT   | Version of the Helm Chart to use.*                                            | `false` | 0.1.24                                       |
+| K8S_CERT_AUTHORITY_DATA  | `certificate-authority-data` value on the Kubernetes config file.             | `true` | LS0tLS2CRUdPFiBDRVJUSUZJQ0FURSOtLS98URKtC... |
+| K8S_SERVER               | `server` value on the Kubernetes config file.                                 | `true` | https://29.29.29.29:16443                    |
+| K8S_TOKEN                | auth token to access the cluster.                                             |`true`  | eyJhbGciOiJSU...                             |
+| NAMESPACE                | K8s namespace to deploy the application in.                                   |  `true` | production                                   |
+| IMAGE_TAG                | Tag of the image to deploy. It should be the same generated on the bake step. | `true`  |                                              | 1.0.0.${CI_BUILD_NUMBER}  |
 
 * It's recomended to specify the chart version, to ensure the deployment is reproducible and to avoid surprises when the chart evolves independently of the application.
 

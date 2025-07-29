@@ -16,5 +16,4 @@ preferences: {}
 users:
 - name: default
   user:
-    password: ${K8S_PASSWORD}
-    username: ${K8S_USER}
+    token: ${K8S_TOKEN}
